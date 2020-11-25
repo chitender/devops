@@ -15,14 +15,14 @@ import mimetypes
 
 #### Config ########
 
-AWS_ACCESS_KEY = "AKIAVISFN4VY5LLDZUHL"
-AWS_SECRET_KEY = "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"
+AWS_ACCESS_KEY = ""
+AWS_SECRET_KEY = ""
 REGION_NAME = "ap-south-1"
 smtp_server = "smtp.gmail.com" #### SMTP Server host endpoint
 port = 587  # For SSL
 sender_email = "chitenderkumar.16@gmail.com"  # Enter your address
-receiver_email = "chitender@atlan.com"  # Enter receiver address
-password = "zsiqecltyknwwvkd"
+receiver_email = ""  # Enter receiver address
+password = ""
 
 #### Config End #######
 
