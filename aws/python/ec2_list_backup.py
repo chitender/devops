@@ -69,6 +69,7 @@ for ami in imagesList['Images']:
 amiMissingCount = amiCount - availableInstanceCountForBackup
 print("total instance:", availableInstanceCount)
 print("instance available for backup:", availableInstanceCountForBackup)
+print("ami created in last 24hours:", amiCount)
 print("missing backup:", amiMissingCount)
 
 ##### Generating excel
@@ -78,6 +79,7 @@ backupReport = (
     ['AwsAccountId', accountId],
     ['InstanceAvailabel', availableInstanceCount],
     ['InstanceForBackup', availableInstanceCountForBackup],
+    ['AmiCreated', amiCount],
     ['InstanceMissingBackup', amiMissingCount]
 )
 row = 0
