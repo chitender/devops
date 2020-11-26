@@ -17,10 +17,11 @@ import mimetypes
 
 AWS_ACCESS_KEY = ""
 AWS_SECRET_KEY = ""
+AWS_SESSION_TOKEN = ""
 REGION_NAME = "ap-south-1"
-smtp_server = "smtp.gmail.com" #### SMTP Server host endpoint
+smtp_server = "" #### SMTP Server host endpoint
 port = 587  # For SSL
-sender_email = "chitenderkumar.16@gmail.com"  # Enter your address
+sender_email = ""  # Enter your address
 receiver_email = ""  # Enter receiver address
 password = ""
 
@@ -36,7 +37,7 @@ Thank You
 amiCount = 0 # initialising the variable for ami created in last 24Hours
 
 ##### Creating session with AWS
-session = boto3.session.Session(aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY,region_name=REGION_NAME)
+session = boto3.session.Session(aws_access_key_id=AWS_ACCESS_KEY, aws_secret_access_key=AWS_SECRET_KEY,region_name=REGION_NAME, aws_session_token=AWS_SESSION_TOKEN )
 ##### Getting AWS Account ID ######
 accountId = session.client('sts').get_caller_identity().get('Account')
 
@@ -84,8 +85,8 @@ col = 0
 
 for property, count in (backupReport):
     worksheet.write(row, col, property)
-    worksheet.write(row, col + 1, count)
-    row +=1
+    worksheet.write(row + 1, col , count)
+    col +=1
 workbook.close()
 
 ######## Mailing
